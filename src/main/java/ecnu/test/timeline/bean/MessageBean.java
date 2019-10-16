@@ -3,24 +3,17 @@ import java.util.*;
 
 
 public class MessageBean {
-    private int message_ID;
-    private String user_ID;
+    private int messageID;
+    private String userID;
     private Date time;
     private String context;
 
-    public int getMessage_ID() {
-        return message_ID;
+    public String getUserID() {
+        return userID;
     }
 
-    public void setMessage_ID(int message_ID) {
-        this.message_ID = message_ID;
-    }
-
-    public String getUser_ID() {
-        return user_ID;
-    }
-
-    public void setUser_ID(String user_ID) { this.user_ID = user_ID;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
 
     public Date getTime() {
@@ -39,5 +32,11 @@ public class MessageBean {
         this.context = context;
     }
 
+    public int getMessageID() {
+        return messageID;
+    }
 
+    public void setMessageID(int messageID) {
+        this.messageID = messageID;
+    }
 }
