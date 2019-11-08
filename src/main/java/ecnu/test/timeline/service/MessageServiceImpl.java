@@ -24,4 +24,43 @@ public class MessageServiceImpl implements MessageService{
 //            return null;
             }
         }
+
+    @Override
+    public MessageBean deleteMessageByID(int id) {
+            try {
+                MessageBean message = messageMapper.getMessageByID(id);
+                messageMapper.deleteMessageByID(id);
+                return  message;
+            }
+            catch (Exception e)
+            {
+                throw e;
+//            return null;
+            }
     }
+
+    @Override
+        public void addTestMessage()
+        {
+            try {
+                messageMapper.addTestMessage();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+    @Override
+    public MessageBean getMessageByID(int id) {
+        try {
+            MessageBean message = messageMapper.getMessageByID(id);
+            return  message;
+        }
+        catch (Exception e)
+        {
+            throw e;
+//            return null;
+        }
+    }
+}
