@@ -23,6 +23,6 @@ public interface MessageMapper {
     @Delete("delete from message where message_id = #{id}")
     void deleteMessageByID(int id);
 
-    @Insert("insert into message values(0,'测试',NOW(),'我是测试的插入数据')")
+    @Insert("insert into message values(0,'Test','2013-10-12 13:20:45','I am testing data')")
     void addTestMessage();
 }

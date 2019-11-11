@@ -22,6 +22,7 @@ INSERT INTO message VALUES(7,'何老师','2019-9-8 13:10:11','我想问问同学
 INSERT INTO message VALUES(8,'赵老师','2019-9-15 11:10:20','阅读英文文献是我们应该具备的能力，大家先回去读两篇论文。');
 INSERT INTO message VALUES(9,'高老师','2019-6-2 13:22:53','这个项目也没什么要求，基本上能动就行，随便几个人一组随便做什么。');
 INSERT INTO message VALUES(10,'我',NOW(),'我太难了');
-
+INSERT INTO message VALUES(11,'雷军','2016-4-20 11:22:11','Are you OK？');
+INSERT INTO message VALUES(12,'赵本山','2012-12-2 13:22:53','发牌 看牌~');
 
 
