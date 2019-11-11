@@ -7,12 +7,17 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 import java.util.List;
 
+/**
+ * @author lyx
+ */
 @Component
 public interface MessageMapper {
     @Select("select * from message order by time DESC ")
     List<MessageBean> getMessageList();
 
-    @Select("select * from message where message_id = #{id}")
+    @Select("select * "+
+            "from message " +
+            "where message_id = #{id}")
     MessageBean getMessageByID(int id);
 
     @Delete("delete from message where message_id = #{id}")

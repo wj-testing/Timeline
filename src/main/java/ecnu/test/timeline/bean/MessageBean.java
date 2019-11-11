@@ -1,11 +1,13 @@
 package ecnu.test.timeline.bean;
 import java.util.*;
 
-
+/**
+ * @author lyx
+ */
 public class MessageBean {
     private int message_ID;
     private String user_ID;
-    private Date time;
+    private String time;
     private String context;
 
     public int getMessage_ID() {
@@ -23,11 +25,11 @@ public class MessageBean {
     public void setUser_ID(String user_ID) { this.user_ID = user_ID;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
