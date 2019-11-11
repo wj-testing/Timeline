@@ -1,6 +1,7 @@
 package ecnu.test.timeline.control;
 
 import ecnu.test.timeline.service.MessageService;
+import ecnu.test.timeline.service.MessageServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,25 +26,35 @@ public class MessageControllerTest {
     @MockBean
     MessageService messageService;
 
+    @MockBean
+    MessageServiceImpl messageServiceImpl;
+
+    @MockBean
+    MessageMapper messageMapper;
+
     @Test
     void shouldGetMessageList() throws Exception{
         ResultActions perform = mockMvc.perform(get("/api/message"));
+        perform.andExpect(status().isOk());
+        verify(messageService,times(1)).getMessageList();
+    }
+
+    @Test
+    void shouldGetMessageByID() throws Exception{
+        ResultActions perform = mockMvc.perform(get("/api/message/1"));
         perform.andExpect(status().isOk());
         verify(messageService,times(1)).getMessageByID(1);
     }
 
     @Test
-    void shouldGetMessageByID() throws Exception{
-        ResultActions perform = mockMvc.perform(get("/api/message"));
-    }
-
-    @Test
     void shouldAddTestMessage() throws Exception{
         ResultActions perform = mockMvc.perform(post("/api/message"));
+        perform.andExpect(status().isOk());
     }
 
     @Test
     void shouldDeleteMessageByID() throws Exception{
-        ResultActions perform = mockMvc.perform(delete("/api/message"));
+        ResultActions perform = mockMvc.perform(delete("/api/message/11"));
+        perform.andExpect(status().isOk());
     }
 }
