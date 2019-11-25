@@ -41,5 +41,13 @@ public class MessageBean {
         this.context = context;
     }
 
+    public MessageBean() {
+    }
 
+    public MessageBean(int message_ID, String user_ID, String time, String context) {
+        this.message_ID = message_ID;
+        this.user_ID = user_ID;
+        this.time = time;
+        this.context = context;
+    }
 }

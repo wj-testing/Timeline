@@ -1,5 +1,8 @@
 package ecnu.test.timeline.control;
 
+import ecnu.test.timeline.mapper.MessageMapper;
+import ecnu.test.timeline.repository.MessageRepository;
+import ecnu.test.timeline.repository.MessageRepositoryImpl;
 import ecnu.test.timeline.service.MessageService;
 import ecnu.test.timeline.service.MessageServiceImpl;
 //import org.junit.Test;
@@ -34,6 +37,12 @@ public class MessageControllerTest {
 
     @MockBean
     MessageServiceImpl messageServiceImpl;
+
+    @MockBean
+    MessageRepository messageRepository;
+
+    @MockBean
+    MessageRepositoryImpl messageRepositoryImpl;
 
     @MockBean
     MessageMapper messageMapper;

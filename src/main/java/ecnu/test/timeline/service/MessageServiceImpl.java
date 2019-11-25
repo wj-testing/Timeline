@@ -1,68 +1,41 @@
 package ecnu.test.timeline.service;
 
 import ecnu.test.timeline.bean.MessageBean;
-import ecnu.test.timeline.control.MessageMapper;
+import ecnu.test.timeline.repository.MessageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 /**
  * @author lyx
  */
-@Repository
+@Service
 public class MessageServiceImpl implements MessageService{
+
         @Autowired
-        private MessageMapper messageMapper;
+        private MessageRepository messageRepository;
         @Override
         public List<MessageBean> getMessageList() {
 
-            try {
-                List<MessageBean> messages = messageMapper.getMessageList();
-                return  messages;
-            }
-            catch (Exception e)
-            {
-                throw e;
-//            return null;
-            }
+                List<MessageBean> messages = messageRepository.getMessageList();
+                return messages;
         }
 
     @Override
     public MessageBean deleteMessageByID(int id) {
-            try {
-                MessageBean message = messageMapper.getMessageByID(id);
-                messageMapper.deleteMessageByID(id);
+                MessageBean message = messageRepository.getMessageByID(id);
+                messageRepository.deleteMessageByID(id);
                 return  message;
-            }
-            catch (Exception e)
-            {
-                throw e;
-//            return null;
-            }
     }
 
     @Override
-        public void addTestMessage()
-        {
-            try {
-                messageMapper.addTestMessage();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+        public void addTestMessage() {
+        messageRepository.addTestMessage();
         }
 
     @Override
     public MessageBean getMessageByID(int id) {
-        try {
-            MessageBean message = messageMapper.getMessageByID(id);
+            MessageBean message = messageRepository.getMessageByID(id);
             return  message;
-        }
-        catch (Exception e)
-        {
-            throw e;
-//            return null;
-        }
     }
 }
